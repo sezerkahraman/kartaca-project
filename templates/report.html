@@ -1,0 +1,79 @@
+<html>
+<body>
+<div style="width: 1000px!important; height: 1000px!important; text-align: center!important;">
+    <canvas id="myChart" width=250px" height="250px"></canvas>
+</div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="text/javascript">
+    setTimeout(function () {
+        location.reload();
+    }, 60 * 1000);
+    var ctx = document.getElementById('myChart');
+    var datasets = {
+        "GET": {
+            data: [],
+            label: "GET",
+            backgroundColor: 'rgb(255, 178, 102)'
+        },
+        "POST": {
+            data: [],
+            label: "POST",
+            backgroundColor: 'rgb(153, 255, 204)'
+        },
+        "PUT": {
+            data: [],
+            label: "PUT",
+            backgroundColor: 'rgb(255, 153, 255)'
+        },
+        "DELETE": {
+            data: [],
+            label: "DELETE",
+            backgroundColor: 'rgb(255, 99, 132)'
+        },
+    }
+    {% for obj2 in object_list %}
+        datasets["{{ obj2.request_method }}"].data.push(
+            {
+                x: "{{ obj2.response_time }}",
+                y: "{{ obj2.request_timestamp }}",
+                r: 15,
+            }
+        )
+    {% endfor %}
+
+    const data = {
+        datasets: [datasets.GET, datasets.POST, datasets.DELETE, datasets.PUT]
+    };
+
+    const options = {
+            scales: {
+                y: {
+                    ticks: {
+                        callback: function (label, index, labels) {
+                            var date = new Date(parseInt(label));
+                            // Hours part from the timestamp
+                            var hours = date.getHours();
+                            var minutes = "0" + date.getMinutes();
+                            var seconds = "0" + date.getSeconds();
+                            return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+                        }
+                    },
+
+
+                },
+
+            }
+
+        }
+    ;
+
+    var myBubbleChart = new Chart(ctx, {
+        type: 'bubble',
+        data: data,
+        options: options
+    });
+
+
+</script>
