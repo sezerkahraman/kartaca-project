@@ -18,5 +18,5 @@ http://localhost:8007/rest/report adresinden son 1 saatteki request'lerin raporu
 <li>Uygulamanın ayağa kaldırılması için, proje dizininde docker-compose up --build çalıstırılmalıdır </li>
 </ol>
 
-Özel Anahtar Kod:gAAAAABgUIn3wIfuJEeOoMJLRP_vDzLxvllVh0UhY9QgCRSBspPR0XQQT4XDNMb0EE3CDCFMID2X1hoEv8AaooOUUGVrPEC_7kMLykr3V2nG9_Zwegk-GxLd-OEoI6C6z_zBXUZ5fqJM3uNoEnhQSDTlBGnC76XmqlzZBAAKsn91qDdQaSd1c7WGqptfLsVA9-kmWaq51hNkPm_hbtr3_n3xyvU68Mo56A==
+Kod:gAAAAABgUIn3wIfuJEeOoMJLRP_vDzLxvllVh0UhY9QgCRSBspPR0XQQT4XDNMb0EE3CDCFMID2X1hoEv8AaooOUUGVrPEC_7kMLykr3V2nG9_Zwegk-GxLd-OEoI6C6z_zBXUZ5fqJM3uNoEnhQSDTlBGnC76XmqlzZBAAKsn91qDdQaSd1c7WGqptfLsVA9-kmWaq51hNkPm_hbtr3_n3xyvU68Mo56A==
 
